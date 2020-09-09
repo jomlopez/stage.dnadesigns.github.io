@@ -1,0 +1,381 @@
+$bg: #FAF9F6
+$dark: #232320
+$beige: #B5A89D
+$light-beige: rgba(181,168,157,0.8)
+$moss: #075046
+$terracotta: #995F44
+$light-terracotta: #aa6c50
+$paper: #F0EEEA
+
+$display-font: "Oswald", sans-serif
+$body-font: "Raleway", sans-serif
+
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+body   
+    background: $bg
+    font-family: 'Raleway', sans-serif
+    line-height: 1.4
+
+h1, h2, h3, h4, h5, h6 
+    font-family: 'Oswald', sans-serif
+    font-weight: 200
+
+@media screen and (max-width: 767px)
+    
+    h1 
+        font-size: 17pt
+
+    h2
+        font-size: 16pt
+
+    h3 
+        font-size: 15pt
+    
+    h4, h5, h6 
+        font-size: 14pt
+
+@media screen and (min-width: 768px)
+
+    h1 
+        font-size: 22pt
+
+    h2
+        font-size: 20pt
+
+    h3 
+        font-size: 18pt
+
+    h4, h5, h6 
+        font-size: 16pt
+
+
+
+img
+    width: 100%
+
+
+a
+    color: $beige
+    text-decoration: none
+    transition: all .4s ease-in-out
+
+a:hover, a:focus, a:active
+    color: $light-beige
+    text-decoration: underline
+    transition: all .4s ease-in-out
+
+/** Button Styles **/
+
+.btn
+    display: inline-block 
+    padding: 0.7rem 1.2rem
+    font-family: $display-font
+    font-weight:200
+    text-transform: uppercase
+    // font-size: 12pt
+    text-decoration: none
+    transition: all .4s ease-in-out
+
+    &:hover
+        text-decoration: none
+        transform: scale(1.0)
+
+.btn-default
+    border: 1px solid $dark
+    color: $dark
+
+    &:hover 
+        background: $dark
+        color: #fff !important
+
+.btn-primary
+    color: #fff
+    background: $terracotta
+
+.btn-primary:hover 
+    background: $light-terracotta
+    color: #fff
+    transition: all .4s ease-in-out
+
+.section-heading
+    text-align: center
+    text-transform: uppercase
+    margin-bottom: 2rem
+    position: relative
+
+    &:before
+        content: ""
+        display: block
+        left: 0
+        top: 55%
+        position: absolute
+        height: 1px
+        background: $beige
+    
+    &:after 
+        content: ""
+        display: block
+        right: 0
+        top: 55%
+        position: absolute
+        height: 1px
+        background: $beige
+
+.ig-section__heading
+    text-align: center
+    margin-bottom: 2rem
+
+.banner
+    background: url('../images/header-bg.png') no-repeat center
+    background-position-y: -8rem
+    background-size: cover
+    // min-height: 100vh
+
+.container 
+    padding: 0 5vh
+
+.top-pad
+    padding-top: 2rem
+
+.bottom-pad
+    padding-bottom: 2rem
+
+.services-home
+    margin: 5rem 0 0
+    color: #FFF 
+    overflow: hidden
+
+.service-section 
+    display: flex
+    align-items: stretch
+    height: 100%
+
+    & > div
+        flex: 1
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+
+    .service-section__desc
+        background: $moss
+        text-transform: uppercase
+
+        h2  
+            padding: 1.7rem 0.5rem
+            position: relative
+    
+    .service-section__thumb 
+        img
+            display: block
+    
+.power-statement
+    background: url('../images/terrazo-bg.png') no-repeat
+    background-size: cover
+    background-attachment: fixed
+    
+    
+    .container 
+        
+        .quote
+            position: relative
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1)
+
+            a
+                position: absolute
+                
+        .thumb
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1)
+            img
+                display: block
+
+.section-gallery, .ig-section
+    padding-top: 5em
+    padding-bottom: 5em
+
+.gallery-block
+    margin-bottom: 22px
+
+.gallery-block__body    
+    position: relative
+
+    h3
+        text-transform: uppercase
+        font-weight: 400
+        letter-spacing: 10px
+        line-height: 1.5
+        color: $beige
+        margin-top: -2rem
+        position: absolute
+        top: 0
+        left: 0
+        transform-origin: bottom left
+        transform: rotate(90deg) 
+    
+    .block-residential, .block-commercial
+        margin-left: 3rem
+
+.block-residential__row-a, .block-residential__row-b
+    a
+        display: flex
+        align-items: center
+        font-family: $display-font
+        font-weight: 200
+        text-transform: uppercase
+        text-decoration: none
+        justify-content: center
+        flex-direction: column
+        border: 1px $beige solid
+        background: #fff
+
+.block-commercial__content 
+    background: $moss
+    color: #fff
+    padding: 2.5rem
+    min-height: 30vw
+
+    ul
+        // margin-left: 1.5rem
+        list-style: none
+        
+        li
+            margin-left: 2rem
+        
+        li:before
+            content: '\27F6'
+            margin-left: -2rem
+            margin-right: 7px
+
+.block-commercial__image
+    position: relative
+    height: auto 
+    overflow: hidden
+
+.block-commercial__image::after 
+    background: url('../images/gallery-section-commercial.png')
+    content: ''
+    position: absolute
+    top: 0
+    right: 0
+    left: 0
+    bottom: 0
+    height: 100%
+    background-size: 100%
+    z-index: -1
+
+.block-residential__row-a, .block-residential__row-b 
+    
+    a
+        position: relative
+        box-shadow: 0 0 60px rgb(255,255,255) inset
+        
+        &::before
+            content: ''
+            position: absolute
+            top: 0
+            bottom: 0
+            left: 0
+            right: 0
+            background: #fff
+            opacity: 1
+            z-index: 1
+            transition: all .4s ease-in-out
+
+        &:hover
+            color: #fff
+
+            img
+                filter: brightness(10)
+                transition: all .4s ease-in-out
+
+        & > *
+            z-index: 2
+
+        & > span:hover
+            color: #fff
+
+        &:hover::before 
+            opacity: 0
+
+.block-residential__row-a
+    a:nth-child(1)
+        background: url('../images/gallery-section-exterior.png') no-repeat center
+        background-size: cover
+    a:nth-child(2)
+        background: url('../images/gallery-section-exterior.png') no-repeat center
+        background-size: cover
+    a:nth-child(3)
+        background: url('../images/gallery-section-exterior.png') no-repeat center
+        background-size: cover
+    a:nth-child(4)
+        background: url('../images/gallery-section-exterior.png') no-repeat center
+        background-size: cover
+
+.block-residential__row-b
+    a:nth-child(1)
+        background: url('../images/gallery-section-exterior.png') no-repeat center
+        background-size: cover
+    a:nth-child(2)
+        background: url('../images/gallery-section-exterior.png') no-repeat center
+        background-size: cover
+    
+.testimonial 
+    background: url('../images/testimonial-section-bg.png') no-repeat
+    background-size: cover
+    text-align: center
+    position: relative
+    color: #fff
+
+    & > *
+        position: relative
+        z-index: 1
+    &:after 
+        content: ''
+        display: block
+        position: absolute
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+        background: rgba(0,0,0,0.3)
+        z-index: 0
+
+    q
+        padding-bottom: 2rem
+        // font-size: 2rem
+
+    .name-thumb
+        margin: 2rem 0
+        font-family: $display-font
+        font-weight: 200
+        font-size: 20pt
+        width: auto
+        
+        img
+            display: block
+            width: auto
+            margin: 0 auto
+
+
+.gallery-grid
+    display: flex
+    flex-wrap: wrap
+    margin: -1rem -1rem
+    padding-bottom: 3rem
+
+    .gallery-item
+        position: relative
+        margin: 1rem
+        color: #fff
+        cursor: pointer
+        height: 50px
+        width: 100%
+        background: $terracotta
+
+@import header
+@import media
+@import footer
+@import animations

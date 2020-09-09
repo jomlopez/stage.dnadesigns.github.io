@@ -1,0 +1,98 @@
+footer
+    .footer-nav
+        display: flex
+
+        .footer-logo 
+            width: 40vw
+            min-width: 80px
+            max-width: 200px
+        
+        .main-links
+            display: flex
+            list-style: none
+
+            a
+                font-family: $display-font
+                font-weight: 200
+                color: $dark
+                text-transform: uppercase
+
+    .meta-links
+        display: flex
+        
+        ul
+            display: flex
+            align-items: center
+            list-style: none    
+
+            li
+                margin: 15px
+                a
+                    padding: 6px
+                    display: inline-block
+
+                    img
+                        width: 2vw
+                        min-width: 25px
+                        max-width: 50px
+
+        
+
+@media screen and (max-width: 767px)
+    footer
+        .footer-nav
+            flex-direction: column
+            align-items: center
+            
+            .main-links 
+                flex-direction: row
+                flex-wrap: wrap
+                justify-content: center
+
+                li
+                    margin: 0.5rem 0.6rem
+                    // flex: 1 0 25%
+                    text-align: center
+
+                    &:last-child
+                        flex-basis: 100%
+
+                        a
+                            width: 100%
+
+        .meta-links
+            flex-direction: column
+            text-align: center
+
+            ul
+                text-align: center
+                justify-content: center
+                margin: 1rem 0
+            
+            span 
+                display: block
+                margin: 2rem 0
+
+@media screen and (min-width: 768px) 
+
+    footer
+        .footer-nav
+            flex-direction: row
+            justify-content: space-between
+            align-items: center
+            padding-bottom: 20px
+            border-bottom: 1px solid $dark
+
+            .main-links
+                align-items: center
+
+                li
+                    margin: 10px 3vw
+        
+        .meta-links
+            justify-content: space-between
+            align-items: center
+
+            span
+                font-size: 1rem
+                margin: 0 3vw

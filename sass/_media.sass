@@ -1,0 +1,527 @@
+@media screen and (max-width: 767px)
+    header
+        position: fixed
+        justify-content: space-between
+
+        .menu-icon
+            display: block
+            margin: 1rem
+
+            svg
+                fill: $dark
+                transition: fill 0.3 0.6
+                animation: closedMid 0.8s backwards
+                animation-direction: reverse
+                
+        .nav-links 
+            position: absolute
+            top: 0
+            left: 0
+            opacity: 0
+            flex-direction: column
+            justify-content: space-evenly
+            align-items: center
+            width: 100vw
+            height: 100vh
+            font-size: 1rem
+            background: $dark
+            transition: opacity .8s .5s, clip-path 1s .5s
+            clip-path: inset(200px at top right)
+            
+            .nav-link
+                opacity: 0
+                transform: translateX(100%)
+                width: 100%
+                text-align: center
+
+                a 
+                    color: #fff                 
+                    display: block
+                    //padding: 2rem 0
+
+        .menu-btn:checked ~ .nav-links
+            opacity: 1
+            clip-path: inset(100% at center)
+
+            .nav-link 
+                opacity: 1
+                transform: translateX(0)
+                transition: opacity .4s ease-in-out, transform .6s cubic-bezier(0.175, 0.885, 0.2, 1.2)
+
+                &:nth-of-type(1) 
+                    transition-delay: .7s
+                &:nth-of-type(2) 
+                    transition-delay: .8s
+                &:nth-of-type(3) 
+                    transition-delay: .9s
+                &:nth-of-type(4) 
+                    transition-delay: 1.0s
+                &:nth-of-type(5) 
+                    transition-delay: 1.1s
+
+        .menu-btn:checked ~ .menu-icon 
+            border-radius: 50%
+            animation: pulse 1s 
+
+            svg
+                fill: #fff
+                transition: fill 0.3 0.6
+
+        &.scrolled
+            height: 80px
+            background: #fff
+
+            .logo 
+                text-align: left
+
+                img
+                    -webkit-transform: scale(0.5) rotate(0.02deg)
+                    transform: scale(0.6) rotate(0.02deg)
+                    transform-origin: top left
+
+    .container-b 
+        padding-left: 2vh
+        padding-right: 2vh
+
+    .section-heading 
+        font-size: 2rem
+
+        &:before
+            right: 70%
+
+        &:after 
+            left: 70%
+    .ig-section__heading
+        font-size: 2rem
+
+    .banner 
+        .push
+            display: block
+            height: 200px
+            min-height: 100px
+            max-height: 160px
+
+    .power-statement 
+        padding: 4rem 2rem
+
+        .container  
+            display: flex
+            flex-direction: column
+
+            .quote 
+                padding: 2rem 2rem
+                background: #fff
+
+                a 
+                    top: -2rem
+                    right: -2rem
+                    text-align: right
+    
+    .block-residential__row-a, .block-residential__row-b
+        a
+            margin-bottom: 22px
+            height: 50vw
+
+            img
+                width: 3rem
+        
+    .testimonial
+        padding: 4rem 2rem
+
+        q
+            font-size: 1.3rem
+    
+    .instagram-feed 
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        grid-template-rows: 2fr repeat(3, 1fr)
+        grid-column-gap: 5px
+        grid-row-gap: 4px
+
+        div 
+            a 
+                overflow: hidden
+                display: block
+                line-height: 1
+
+                img
+                    display: block
+                    transform: scale(1.01)
+        
+        div:nth-child(1)
+            grid-area: 1 / 1 / 2 / 3
+        div:nth-child(2)
+            grid-area: 2 / 1 / 3 / 2
+        div:nth-child(3)
+            grid-area: 2 / 2 / 3 / 3
+        div:nth-child(4)
+            grid-area: 3 / 1 / 4 / 2
+        div:nth-child(5)
+            grid-area: 3 / 2 / 4 / 3
+        div:nth-child(6)
+            grid-area: 4 / 1 / 5 / 2
+        div:nth-child(7)
+            grid-area: 4 / 2 / 5 / 3
+
+@media screen and (min-width: 768px)
+    body   
+        font-size: 1.2em
+    header  
+        position: absolute
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        // height: 40vw
+        min-height: 300px
+        max-height: 420px
+
+        .logo 
+            margin: 3em 0
+            min-width: 200px
+        
+        .nav-link
+            a 
+                display: inline-block
+                background: #fff
+                width: 7vw
+                max-width: 120px
+                min-width: 80px
+                padding-bottom: 0.15rem
+                text-align: center
+                margin: 1rem 2.5vw
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1)
+
+                &:before
+                    content: ""
+                    //background: #B5A89D
+                    height: 4vw
+                    width: 100%
+                    display: block
+                    margin-bottom: 0.15rem
+                    max-height: 120px
+                    min-height: 45px
+
+                &:hover
+                    transform: translateY(-12px) 
+                
+            &:nth-child(1)
+                    a:before
+                        background: $beige
+                    a:hover
+                        color: $beige
+
+            &:nth-child(2)
+                    a:before
+                        background: $moss
+                    a:hover
+                        color: $moss
+
+            &:nth-child(3)
+                    a:before
+                        background: $dark
+                    a:hover 
+                        color: $dark
+            
+            &:nth-child(4)
+                    a:before
+                        background: $terracotta
+                    a:hover 
+                        color: $terracotta
+
+            &:nth-child(5)
+                    a:before
+                        background: $paper
+                    a:hover 
+                        color: $paper
+
+    .container-b 
+        padding-left: 8vh
+        padding-right: 8vh
+
+    .section-heading 
+        font-size: 4vw
+
+        &:before
+            right: 62%
+
+        &:after 
+            left: 62%
+    
+    .ig-section__heading
+        font-size: 4vw
+
+    .banner 
+        img 
+            width: 80vw
+            margin: 0 auto
+            display: block
+            max-width: 1700px
+        
+    .push
+        display: block
+        height: 50vh
+        min-height: 300px
+        max-height: 450px
+    
+    .services-home
+        .service-section
+            position: relative
+
+            &.residential
+                .service-section__desc::after
+                    content: ""
+                    display: block
+                    width: 17vw
+                    height: 40vw
+                    background: url(../images/illus-plant.png) no-repeat
+                    background-size: contain
+                    position: absolute
+                    bottom: -50px
+                    left: -30px
+            
+            &.commercial
+                .service-section__desc::after
+                    content: ""
+                    display: block
+                    width: 30vw
+                    height: 24vw
+                    background: url(../images/illus-bench.png) no-repeat
+                    background-size: contain
+                    position: absolute
+                    bottom: -55px
+                    right: -80px
+    
+    .service-section__desc
+        h2
+            font-size: 2.6vw
+
+        .residential
+            position: relative
+
+            &:after
+                content: ''
+                background: #fff
+                display: block
+                width: 25vw
+                height: 2px
+                position: absolute
+                left: 100%
+                top: 50%
+
+        .commercial
+            position: relative
+
+            &:after
+                content: ''
+                background: #fff
+                display: block
+                width: 25vw
+                height: 2px
+                position: absolute
+                right: 100%
+                top: 50%
+    
+    .power-statement
+        padding: 10rem 8rem
+        
+        .container  
+            display: flex
+            flex-direction: row
+
+            .quote
+                padding: 2.7rem 2.5rem
+                background: #fff
+                font-size: 1.5rem
+
+                a
+                    right: 10%
+                    bottom: -2rem
+
+    .block-residential__row-a
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        grid-template-rows: repeat(2, 1fr)
+        grid-column-gap: 22px
+        grid-row-gap: 26px
+
+        a:nth-child(1) 
+            grid-area: 1 / 1 / 3 / 2 
+            height: 80vh
+        a:nth-child(2)
+            grid-area: 1 / 2 / 2 / 3
+        a:nth-child(3)
+            grid-area: 2 / 2 / 3 / 3
+        a:nth-child(4)
+            grid-area: 1 / 3 / 3 / 4
+            height: 80vh
+
+    .block-residential__row-b
+        margin-top: 22px
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        grid-template-rows: 1fr
+        grid-column-gap: 22px
+        grid-row-gap: 10px
+
+        a
+            height: 40vh
+
+        a:nth-child(1)
+            grid-area: 1 / 1 / 2 / 2
+            
+        a:nth-child(2)
+            grid-area: 1 / 2 / 2 / 3
+
+
+    .block-residential__row-a, .block-residential__row-b 
+        a
+            img
+                width: 5vw
+
+    .block-commercial 
+        display: grid
+        grid-template-columns: 1.5fr 2fr
+        grid-template-rows: 1fr
+        grid-column-gap: 0px
+        grid-row-gap: 0px
+
+        div:nth-child(1)
+            grid-area: 1 / 1 / 2 / 2
+        div2:nth-child(2)
+            grid-area: 1 / 2 / 2 / 3
+
+    .block-commercial__content 
+        font-size: 2vw
+
+    .testimonial
+        padding: 10rem 8rem
+
+        q
+            font-size: 2rem
+            
+    .instagram-feed
+        display: grid
+        grid-template-columns: 2fr repeat(3, 1fr)
+        grid-template-rows: repeat(2, 1fr)
+        grid-column-gap: 7px
+        grid-row-gap: 7px
+        position: relative
+        
+        div 
+            position: relative
+            overflow: hidden
+            z-index: 2
+            a
+                img
+                    display: block
+                    height: 100%
+                    transition: all 0.8s ease
+                    
+                    &:hover 
+                        transform: scale(1.2)
+                        filter: brightness(120%)
+                span 
+                    position: absolute
+                    // background: rgba(255,255,255,0.8)
+                    margin: 1rem
+                    bottom: 0
+                    right: 0
+                    left: 0
+                    color: $dark
+                    overflow: hidden
+                    display: block
+                    opacity: 0
+                    display: -webkit-box
+                    -webkit-line-clamp: 3
+                    -webkit-box-orient: vertical
+                    z-index: 2
+                    transition: all 0.8s ease
+                
+                &:hover span
+                    // opacity: 1
+                
+        div:nth-child(1)
+            grid-area: 1 / 1 / 3 / 2
+            img 
+                height: 100%
+            a
+                span
+                    font-size: 130%
+        div:nth-child(2)
+            grid-area: 1 / 2 / 2 / 3
+        div:nth-child(3)
+            grid-area: 1 / 3 / 2 / 4
+        div:nth-child(4)
+            grid-area: 1 / 4 / 2 / 5
+        div:nth-child(5)
+            grid-area: 2 / 2 / 3 / 3
+        div:nth-child(6)
+            grid-area: 2 / 3 / 3 / 4
+        div:nth-child(7)
+            grid-area: 2 / 4 / 3 / 5
+
+        &::after 
+            background: url('../images/ig-border.png') no-repeat
+            background-size: 100%
+            position: absolute
+            content: ''
+            display: block
+            top: -20px 
+            left: -25px 
+            right: -15px
+            bottom: -20px 
+            z-index: 1
+
+        &::before
+            background: url('../images/icons/instagram.svg')
+            background-size: contain
+            content: ''
+            position: absolute
+            display: block
+            bottom: -40px
+            right: 30px
+            width: 80px
+            height: 80px
+            z-index: 10
+    
+    .gallery-grid
+        .gallery-item
+            flex: 1 0 26rem
+
+@media screen and (min-width: 1024px)
+
+    .power-statement
+
+        .container
+            .quote 
+                display: flex
+                align-items: center
+                font-size: 1.7vw
+
+    .block-residential__row-a
+        a:nth-child(1), a:nth-child(4)
+            max-height: 7500px
+
+    .block-residential__row-b
+        a
+            max-height: 400px
+
+@media screen and (min-width: 768px) and (max-width: 1023px)
+    .power-statement
+
+        .container       
+
+            .thumb
+                position: relative
+
+                img
+                    position: absolute
+                    width: 40%
+
+    .block-residential__row-a
+        a:nth-child(1), a:nth-child(4)
+            max-height: 600px
+
+    .block-residential__row-b
+        a
+            max-height: 250px
